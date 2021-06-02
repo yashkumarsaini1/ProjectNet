@@ -1,0 +1,27 @@
+Commands 
+2.---------------------
+
+
+1. ----------------------
+git config --global user.name YashKS
+
+git config --global user.email yashdms1@gmail.com
+
+git config --global --list
+
+/////////////// IN TERMINAL OUTPUT ////////////////
+Babu Lal Mali@DESKTOP-RB9DL18 MINGW64 /
+$ git config --global user.name YashKS
+
+Babu Lal Mali@DESKTOP-RB9DL18 MINGW64 /
+$ git config --global user.email yashdms1@gmail.com
+
+Babu Lal Mali@DESKTOP-RB9DL18 MINGW64 /
+$ git config --global --list
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+user.name=YashKS
+user.email=yashdms1@gmail.com
+core.editor="C:\Program Files (x86)\Sublime Text 3\sublime_text.exe" -w
