@@ -1,0 +1,25 @@
+.form-input {
+  padding: 12px;
+  border-radius: 0px;
+}
+.form-input:focus {
+  box-shadow: none;
+}
+.add_project {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 500px;
+  color: white;
+  background-color: #000080;
+  transition: all 0.5s;
+}
+.add_project:hover {
+  width: 260px;
+  box-shadow: #00000040 0px 25px 50px -12px;
+  background-color: #0000ff;
+  transition: all 0.5s;
+}
+.star {
+  color: red;
+}

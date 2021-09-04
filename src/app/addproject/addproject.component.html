@@ -1,0 +1,97 @@
+<div class="container mt-4">
+  <h2 class="mt-4 mb-4" style="text-align: center; color: #0000ff">
+    <b
+      ><i>Add Project <i class="fas fa-project-diagram"></i></i
+    ></b>
+  </h2>
+  <div class="row">
+    <div class="col-md-5 mt-1">
+      <label
+        ><b>Project Name <span class="star">*</span></b></label
+      >
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Project Name"
+        [(ngModel)]="p_name"
+      />
+      <label><b>Project Link</b></label>
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Project Link"
+        [(ngModel)]="p_link"
+      />
+      <label
+        ><b>Project Level <span class="star">*</span></b></label
+      ><br />
+      <small>(1: Beginner, 2:Intermediate, 3:Advanced)</small>
+      <input
+        type="number"
+        class="form-control form-input mb-3"
+        max="3"
+        min="1"
+        placeholder="Level of project "
+        onkeyup="if(this.value >3 || this.value<1) this.value ='' "
+        [(ngModel)]="p_level"
+      />
+      <label
+        ><b>Main language use <span class="star">*</span></b></label
+      >
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Main language used "
+        [(ngModel)]="p_main_lang"
+      />
+    </div>
+    <div class="col-md-7">
+      <div class="mb-3">
+        <label><b>About Project</b></label>
+        <angular-editor
+          [placeholder]="'About Project'"
+          [config]="editorConfig"
+          [(ngModel)]="about_det"
+        ></angular-editor>
+      </div>
+
+      <div class="mb-3">
+        <label
+          ><i class="fas fa-code icon"></i
+          ><b>All languages used <span class="star">*</span></b> </label
+        ><br />
+        <small>Add each with comma seprated (eg. html5,css3)</small>
+        <angular-editor
+          [placeholder]="'Add languages used'"
+          [config]="editorConfig"
+          [(ngModel)]="all_lang"
+        ></angular-editor>
+      </div>
+      <div class="mb-3">
+        <label><b>Inside Project Description</b></label>
+        <angular-editor
+          [placeholder]="'Key features of project.'"
+          [config]="editorConfig"
+          [(ngModel)]="key_feature"
+        ></angular-editor>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <button
+          type="submit"
+          class="btn add_project mb-4"
+          [disabled]="
+            !(
+              p_name.length > 0 &&
+              p_main_lang.length > 0 &&
+              (p_level == '1' || p_level == '2' || p_level == '3') &&
+              all_lang.length > 0
+            )
+          "
+          (click)="addProject()"
+        >
+          Add Project
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
